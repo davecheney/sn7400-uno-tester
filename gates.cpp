@@ -2,29 +2,29 @@
 #include <arduino.h>
 #include "gates.h"
 
-InputPin::InputPin(uint8_t pin) {
+Output::Output(uint8_t pin) {
   _pin = pin;
   pinMode(_pin, INPUT);
 }
 
-int InputPin::Get() {
+int Output::Get() {
   return digitalRead(_pin);
 }
 
-bool InputPin::operator ==(const int &b) const {
+bool Output::operator ==(const int &b) const {
   return digitalRead(_pin) == b;
 }
 
-bool InputPin::operator !=(const int &b) const {
+bool Output::operator !=(const int &b) const {
   return digitalRead(_pin) != b;
 }
 
-OutputPin::OutputPin(uint8_t pin) {
+Input::Input(uint8_t pin) {
     _pin = pin;
   pinMode(_pin, OUTPUT);
 }
 
-OutputPin OutputPin::operator=(const int rhs) {
+Input Input::operator=(const int rhs) {
   digitalWrite(_pin, rhs);
 }
 

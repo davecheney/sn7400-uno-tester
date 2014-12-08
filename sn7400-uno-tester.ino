@@ -19,7 +19,7 @@ SN74LS02 x;
 SN74LS04 y;
 SN74LS08 an;
 
-void assert(InputPin& y, int v) {
+void assert(Output& y, int v) {
   if (y != v) {
     printf("pin failed\n");
   }
